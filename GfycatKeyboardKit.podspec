@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = 'GfycatKeyboardKit'
-  s.version             = '0.0.1'
+  s.version             = '0.0.2'
   s.summary             = 'GfycatKeyboardKit for iOS'
   s.description         = 'GfycatKeyboardKit provides interface components to build Gfycat Keyboard.'
   s.homepage            = 'https://developers.gfycat.com/api/'
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
 
   s.platform            = :ios, '8.0'
   s.requires_arc        = true
-  s.source_files        = 'Headers/*.h'
   s.public_header_files = 'Headers/*.h'
+  s.source_files        = 'Headers/*.h,Sources/*'
   s.vendored_libraries  = 'Libraries/libGfycatKeyboard.a'
   s.resource            = 'Resources/*.bundle'
 
