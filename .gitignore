@@ -1,0 +1,14 @@
+# xcode user data and temporaries
+*.xccheckout
+xcuserdata/
+
+# carthage
+Carthage/
+
+# build folder
+Build/
+
+# backups
+*~
+.DS_Store
+._.*
