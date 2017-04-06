@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platform            = :ios, '8.0'
   s.requires_arc        = true
   s.public_header_files = 'Headers/*.h'
-  s.source_files        = 'Headers/*.h,Sources/*'
+  s.source_files        = ['Headers/*.h', 'Sources/*']
   s.vendored_libraries  = 'Libraries/libGfycatKeyboard.a'
   s.resource            = 'Resources/*.bundle'
 
