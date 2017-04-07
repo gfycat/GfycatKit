@@ -17,6 +17,8 @@
 @protocol GFYBrowserControllerDelegate <NSObject, GFYCategoryPickerDelegate, GFYMediaPickerDelegate, GFYFlagMediaViewControllerDelegate>
 
 - (void)gfycatBrowser:(GFYBrowserController *)browser presentViewController:(UIViewController *)viewController;
+- (void)gfycatBrowser:(GFYBrowserController *)browser presentModalViewController:(UIViewController *)viewController;
+- (void)gfycatBrowserDismissModalViewController:(GFYBrowserController *)browser;
 - (void)gfycatBrowser:(GFYBrowserController *)browser setSearchActive:(BOOL)active;
 - (void)gfycatBrowser:(GFYBrowserController *)browser setSearchText:(NSString *)searchText;
 
