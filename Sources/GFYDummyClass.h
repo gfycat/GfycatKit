@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "GFYBrowserController.h"
+#import "GFYBrowserViewController.h"
 
 @interface GFYBrowserViewController (ForceLoad)
 
