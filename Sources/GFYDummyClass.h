@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "GFYBrowserController.h"
 
-@interface _GFYDummyClass: NSObject
+@interface GFYBrowserViewController (ForceLoad)
 
 @end

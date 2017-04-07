@@ -1,5 +1,5 @@
 #import "GFYDummyClass.h"
 
-@implementation _GFYDummyClass
+@implementation GFYBrowserViewController (ForceLoad)
 
 @end
