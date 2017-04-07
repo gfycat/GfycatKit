@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = 'GfycatKeyboardKit'
-  s.version             = '0.0.7'
+  s.version             = '0.0.8'
   s.summary             = 'GfycatKeyboardKit for iOS'
   s.description         = 'GfycatKeyboardKit provides interface components to build Gfycat Keyboard.'
   s.homepage            = 'https://developers.gfycat.com/api/'
@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.source_files        = ['Headers/*.h', 'Sources/*']
   s.vendored_libraries  = 'Libraries/libGfycatKeyboard.a'
   s.resource            = 'Resources/*.bundle'
+  s.xcconfig            = { 'OTHER_LDFLAGS' => '-ObjC -all_load' }
 
   s.dependency 'YYWebImage'
   s.dependency 'YYImage/WebP'
