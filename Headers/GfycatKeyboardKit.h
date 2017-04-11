@@ -170,4 +170,7 @@ FOUNDATION_EXPORT const unsigned char GfycatKeyboardKitVersionString[];
 #import <GfycatKeyboardKit/GFYFlagMediaViewControllerSettings.h>
 #import <GfycatKeyboardKit/GFYFlagMediaViewController.h>
 // Analytics
+#import <GfycatKeyboardKit/GfycatEventTracker.h>
+#import <GfycatKeyboardKit/GFYAnalyticsHub.h>
+#import <GfycatKeyboardKit/GFYAnalyticsTrackerBase.h>
 #import <GfycatKeyboardKit/GFYInterfaceAnalytics.h>
