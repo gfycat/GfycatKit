@@ -1,6 +1,6 @@
 //
 //  GFYSearchHistorySettings.h
-//  GfycatKeyboardKit
+//  GfycatKit
 //
 //  Created by Victor Pavlychko on 4/10/17.
 //  Copyright © 2017 Gfycat. All rights reserved.

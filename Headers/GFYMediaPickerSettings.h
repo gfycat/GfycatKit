@@ -1,6 +1,6 @@
 //
 //  GFYMediaPickerSettings.h
-//  GfycatKeyboardKit
+//  GfycatKit
 //
 //  Created by Victor Pavlychko on 2/23/17.
 //  Copyright © 2017 GfyCat. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  SearchHistoryViewController.h
-//  GfycatKeyboardKit
+//  GfycatKit
 //
 //  Created by Oleksii Chubenko on 8/31/16.
 //  Copyright © 2016 GfyCat. All rights reserved.

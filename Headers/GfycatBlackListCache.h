@@ -1,6 +1,6 @@
 //
 //  GfycatBlackListCache.h
-//  GfycatKeyboardKit
+//  GfycatKit
 //
 //  Created by Oleksii Chubenko on 3/24/17.
 //  Copyright © 2017 GfyCat. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  GFYDummyClass.h
-//  GfycatKeyboardKit
+//  GfycatKit
 //
 //  Created by Victor Pavlychko on 4/11/17.
 //  Copyright © 2017 GfyCat. All rights reserved.

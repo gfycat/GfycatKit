@@ -1,6 +1,6 @@
 //
 //  GfycatApiCache.h
-//  GfycatKeyboardKit
+//  GfycatKit
 //
 //  Created by Victor Pavlychko on 3/16/17.
 //  Copyright © 2017 GfyCat. All rights reserved.

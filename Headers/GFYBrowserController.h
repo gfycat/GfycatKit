@@ -1,6 +1,6 @@
 //
 //  GFYBrowserController.h
-//  GfycatKeyboardKit
+//  GfycatKit
 //
 //  Created by Victor Pavlychko on 2/24/17.
 //  Copyright © 2017 GfyCat. All rights reserved.
