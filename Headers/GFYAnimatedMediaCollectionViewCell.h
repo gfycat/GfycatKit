@@ -118,6 +118,6 @@
 // actions
 @property (nonatomic, copy) void (^mediaFlagActionHandler)(GfycatMedia *media);
 
-@property (nonatomic, assign) GFYMediaViewFormal mediaFormat;
+@property (nonatomic, assign) GFYMediaViewFormat mediaFormat;
 
 @end

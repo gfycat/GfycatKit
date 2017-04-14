@@ -111,7 +111,7 @@
 
 @class GFYMediaView;
 
-typedef NS_ENUM(NSInteger, GFYMediaViewFormal)
+typedef NS_ENUM(NSInteger, GFYMediaViewFormat)
 {
     GFYMediaViewFormatThumbnail,
     GFYMediaViewFormatGIF_1MB,
@@ -138,6 +138,6 @@ typedef void (^GFYMediaViewPlaybackStartedHandler)(GfycatMedia *media);
 @property (nonatomic, copy) GFYMediaViewPlaybackStartedHandler playbackStartedHandler;
 
 @property (nonatomic, strong) GfycatMedia *media;
-@property (nonatomic, assign) GFYMediaViewFormal mediaFormat;
+@property (nonatomic, assign) GFYMediaViewFormat mediaFormat;
 
 @end

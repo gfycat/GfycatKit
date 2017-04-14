@@ -109,10 +109,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol GFYArrangable
+@protocol GFYArrangable <NSObject, NSCopying>
 
-@property (nonatomic, readonly) id modelIdentity;
-@property (nonatomic, readonly) id presentationIdentity;
+@property (nonatomic, readonly) id<NSObject, NSCopying> modelIdentity;
+@property (nonatomic, readonly) id<NSObject, NSCopying> presentationIdentity;
 
 @end
 

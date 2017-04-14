@@ -126,18 +126,18 @@ NS_SWIFT_NAME(GFYCategoryPickerSettingsProtocol)
 
 @property (nonatomic, assign) NSInteger categoryGridSize;
 @property (nonatomic, assign) CGSize categoryAspectRatio;
-@property (nonatomic, assign) GFYMediaViewFormal categoryMediaFormat;
+@property (nonatomic, assign) GFYMediaViewFormat categoryMediaFormat;
 
 @property (nonatomic, assign) BOOL enableRecentItems;
 
 @property (nonatomic, copy) NSDictionary<Class<GFYArrangable>, Class<GFYCollectionViewCell>> *categoryCellViews;
+
+- (void)registerCellView:(Class<GFYCollectionViewCell>)cellView forCategoryModel:(Class<GFYArrangable>)model;
 
 @end
 
 @interface GFYCategoryPickerSettings : NSObject <GFYCategoryPickerSettings>
 
 + (void)fillWithDefaults:(id<GFYCategoryPickerSettings>)settings;
-
-- (void)registerCellView:(Class<GFYCollectionViewCell>)cellView forCategoryModel:(Class<GFYArrangable>)model;
 
 @end

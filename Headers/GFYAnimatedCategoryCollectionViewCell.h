@@ -113,6 +113,6 @@
 
 @interface GFYAnimatedCategoryCollectionViewCell : GFYCollectionViewCell<GfycatCategory *>
 
-@property (nonatomic, assign) GFYMediaViewFormal mediaFormat;
+@property (nonatomic, assign) GFYMediaViewFormat mediaFormat;
 
 @end

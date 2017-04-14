@@ -127,16 +127,16 @@ NS_SWIFT_NAME(GFYMediaPickerSettingsProtocol)
 @property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;
 
 @property (nonatomic, assign) NSInteger videoGridSize;
-@property (nonatomic, assign) GFYMediaViewFormal videoMediaFormat;
+@property (nonatomic, assign) GFYMediaViewFormat videoMediaFormat;
 
 @property (nonatomic, copy) NSDictionary<Class<GFYArrangable>, Class<GFYCollectionViewCell>> *mediaCellViews;
+
+- (void)registerCellView:(Class<GFYCollectionViewCell>)cellView forMediaModel:(Class<GFYArrangable>)model;
 
 @end
 
 @interface GFYMediaPickerSettings : NSObject <GFYMediaPickerSettings>
 
 + (void)fillWithDefaults:(id<GFYMediaPickerSettings>)settings;
-
-- (void)registerCellView:(Class<GFYCollectionViewCell>)cellView forMediaModel:(Class<GFYArrangable>)model;
 
 @end
