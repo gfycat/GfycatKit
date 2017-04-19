@@ -113,6 +113,7 @@
 
 @interface GFYAnimatedMediaCollectionViewCell : GFYCollectionViewCell<GfycatMedia *>
 
+@property (nonatomic, assign) IBInspectable BOOL showControlsOnTap; // default YES
 @property (nonatomic, copy) void (^videoPlaybackStartHandler)(GfycatMedia *media);
 
 // actions

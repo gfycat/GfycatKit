@@ -131,4 +131,6 @@ typedef void (^GFYBrowserSelectionHandler)(GfycatMedia *item, GfycatCategory *fe
 @property (nonatomic, weak) id<GFYBrowserDelegate> delegate;
 @property (nonatomic, copy) GFYBrowserSelectionHandler selectionHandler;
 
+- (void)showCategories;
+
 @end

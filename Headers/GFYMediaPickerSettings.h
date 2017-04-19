@@ -129,6 +129,8 @@ NS_SWIFT_NAME(GFYMediaPickerSettingsProtocol)
 @property (nonatomic, assign) NSInteger videoGridSize;
 @property (nonatomic, assign) GFYMediaViewFormat videoMediaFormat;
 
+@property (nonatomic, assign) BOOL showMediaCellControllsOnTap; // default YES
+
 @property (nonatomic, copy) NSDictionary<Class<GFYArrangable>, Class<GFYCollectionViewCell>> *mediaCellViews;
 
 - (void)registerCellView:(Class<GFYCollectionViewCell>)cellView forMediaModel:(Class<GFYArrangable>)model;
