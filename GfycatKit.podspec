@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = 'GfycatKit'
-  s.version             = '0.0.20'
+  s.version             = '0.0.21'
   s.summary             = 'GfycatKit for iOS'
   s.description         = 'GfycatKit provides UI components to build experiences using Gfycat.'
   s.homepage            = 'https://developers.gfycat.com/api/'
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source_files        = ['Headers/*.h', 'Sources/*']
   s.vendored_libraries  = 'Libraries/libGfycat.a'
   s.resource            = 'Resources/*.bundle'
-  s.xcconfig            = { 'OTHER_LDFLAGS' => '-ObjC -all_load' }
+  s.xcconfig            = { 'OTHER_LDFLAGS' => '-ObjC' }
 
   s.dependency 'YYWebImage'
   s.dependency 'YYImage/WebP'
