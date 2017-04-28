@@ -110,8 +110,6 @@
 
 @interface _GFYAnalyticsTrackerBase : NSObject
 
-- (instancetype)initWithProtocol:(Protocol *)protocol;
-
 - (void)trackEvent:(NSString *)name withParameters:(NSDictionary<NSString *, NSString *> *)parameters;
 
 @end

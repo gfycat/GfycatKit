@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = 'GfycatKit'
-  s.version             = '0.0.21'
+  s.version             = '0.0.22'
   s.summary             = 'GfycatKit for iOS'
   s.description         = 'GfycatKit provides UI components to build experiences using Gfycat.'
   s.homepage            = 'https://developers.gfycat.com/api/'
@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'YYWebImage'
   s.dependency 'YYImage/WebP'
-  s.dependency 'GfycatApiKit'
+  s.dependency 'GfycatApiKit', '~> 0.0.3'
 
 end
