@@ -170,7 +170,6 @@ FOUNDATION_EXPORT const unsigned char GfycatKitVersionString[];
 #import <GfycatKit/GFYFlagMediaViewControllerSettings.h>
 #import <GfycatKit/GFYFlagMediaViewController.h>
 // Analytics
-#import <GfycatKit/GfycatEventTracker.h>
 #import <GfycatKit/GFYAnalyticsHub.h>
 #import <GfycatKit/GFYAnalyticsTrackerBase.h>
 #import <GfycatKit/GFYInterfaceAnalytics.h>
