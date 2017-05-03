@@ -108,11 +108,34 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UINib (GfycatInterface)
 
-+ (instancetype)gfy_nibForClass:(Class)cls;
+/**
+ <#Description#>
 
-+ (NSString *)gfy_nibNameForClass:(Class)cls;
-+ (NSBundle *)gfy_nibBundleForClass:(Class)cls;
+ @param cls <#cls description#>
+ @return <#return value description#>
+ */
++ (instancetype _Nullable)gfy_nibForClass:(Class)cls NS_SWIFT_NAME(init(gfy_class:));
+
+/**
+ <#Description#>
+
+ @param cls <#cls description#>
+ @return <#return value description#>
+ */
++ (NSString * _Nullable)gfy_nibNameForClass:(Class)cls;
+
+/**
+ <#Description#>
+
+ @param cls <#cls description#>
+ @return <#return value description#>
+ */
++ (NSBundle * _Nullable)gfy_nibBundleForClass:(Class)cls;
 
 @end
+
+NS_ASSUME_NONNULL_END

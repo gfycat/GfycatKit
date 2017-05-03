@@ -111,8 +111,12 @@
 #import "GfycatInterfaceCache.h"
 #import "GfycatBlackListCache.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface GfycatSimpleCache : NSObject <GfycatApiCache, GfycatInterfaceCache, GfycatBlackListCache>
 
-+ (instancetype)sharedCache;
+@property (class, nonatomic, readonly) GfycatSimpleCache *sharedCache;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -108,11 +108,14 @@
 
 #import <GfycatApiKit/GfycatApiKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol GfycatInterfaceCache <NSObject>
 
 - (BOOL)serializeRecents:(NSArray<id<NSObject, NSCopying, NSSecureCoding>> *)recentGfycats;
 - (NSArray<id<NSObject, NSCopying, NSSecureCoding>> *)deserializeRecents;
-- (id<NSObject, NSCopying, NSSecureCoding>)firstRecentMedia;
+
+- (id<NSObject, NSCopying, NSSecureCoding> _Nullable)firstRecentMedia;
 - (BOOL)addRecentMedia:(id<NSObject, NSCopying, NSSecureCoding>)media;
 - (BOOL)removeRecentMedia:(id<NSObject, NSCopying, NSSecureCoding>)media;
 
@@ -121,3 +124,5 @@
 - (BOOL)addSearchTerm:(NSString *)searchTerm;
 
 @end
+
+NS_ASSUME_NONNULL_END

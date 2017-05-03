@@ -109,6 +109,8 @@
 #import <Foundation/Foundation.h>
 #import "GFYArraySource.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface GFYSearchMediaArraySource : NSObject <GFYArraySource>
 
 + (instancetype)sourceWithSearchTerm:(NSString *)searchTerm;
@@ -117,3 +119,5 @@
 @property (nonatomic, readonly) NSString *searchTerm;
 
 @end
+
+NS_ASSUME_NONNULL_END

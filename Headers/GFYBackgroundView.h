@@ -108,6 +108,14 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ Backgorund view used by GfycatKit view controllers.
+ Use this class to customize UIAppearance.
+ */
 @interface GFYBackgroundView : UIView
 
 @end
+
+NS_ASSUME_NONNULL_END

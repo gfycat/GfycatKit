@@ -108,14 +108,44 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ <#Description#>
+ */
 @interface GFYActivityBarIndicator : NSObject
 
+/**
+ <#Description#>
+
+ @return <#return value description#>
+ */
 + (instancetype)sharedIndicator;
 
+/**
+ <#Description#>
+
+ @param view <#view description#>
+ */
 - (void)showInView:(UIView *)view;
+
+/**
+ <#Description#>
+ */
 - (void)hide;
+
+/**
+ <#Description#>
+
+ @param delay <#delay description#>
+ */
 - (void)hideAfterDelay:(NSTimeInterval)delay;
 
+/**
+ <#Description#>
+ */
 @property (nonatomic, readonly, getter=isHidden) BOOL hidden;
 
 @end
+
+NS_ASSUME_NONNULL_END

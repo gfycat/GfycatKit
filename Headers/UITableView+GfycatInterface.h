@@ -109,10 +109,26 @@
 #import <UIKit/UIKit.h>
 #import "UIScrollView+GfycatInterface.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UITableView (GfycatInterface)
 
+/**
+ <#Description#>
+
+ @param cellClass <#cellClass description#>
+ */
 - (void)gfy_registerCellClass:(Class)cellClass;
 
+/**
+ <#Description#>
+
+ @param cellClass <#cellClass description#>
+ @param indexPath <#indexPath description#>
+ @return <#return value description#>
+ */
 - (id)gfy_dequeueReusableCellWithClass:(Class)cellClass forIndexPath:(NSIndexPath *)indexPath;
 
 @end
+
+NS_ASSUME_NONNULL_END

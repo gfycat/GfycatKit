@@ -109,6 +109,8 @@
 #import <GfycatApiKit/GfycatApiKit.h>
 #import "GFYInterfaceAnalytics.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol GFYArrayProvider;
 @protocol GFYArrayConsumer;
 @protocol GfycatBlackListCache;
@@ -141,6 +143,8 @@
 @property (nonatomic, readonly) NSString *localizedEmptyMessage;
 
 @property (nonatomic, readonly) GFYAnalyticsContext gfy_reportingContext;
-@property (nonatomic, readonly) NSString *gfy_reportingKeyword;
+@property (nonatomic, readonly, nullable) NSString *gfy_reportingKeyword;
 
 @end
+
+NS_ASSUME_NONNULL_END

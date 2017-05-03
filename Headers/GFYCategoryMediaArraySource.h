@@ -109,6 +109,8 @@
 #import <Foundation/Foundation.h>
 #import "GFYArraySource.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface GFYCategoryMediaArraySource : NSObject <GFYArraySource>
 
 + (instancetype)sourceWithCategory:(GfycatCategory *)category;
@@ -117,3 +119,5 @@
 @property (nonatomic, readonly) GfycatCategory *category;
 
 @end
+
+NS_ASSUME_NONNULL_END

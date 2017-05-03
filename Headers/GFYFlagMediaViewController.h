@@ -107,26 +107,71 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GfycatApiKit/GfycatApiKit.h>
+#import "GFYFlagMediaViewControllerSettings.h"
 
-@class GfycatMedia;
-@protocol GFYFlagMediaViewControllerSettings;
+NS_ASSUME_NONNULL_BEGIN
+
 @class GFYFlagMediaViewController;
 
+/**
+ The delegate of a `GFYFlagMediaViewController` object must adopt the `GFYFlagMediaViewControllerDelegate` protocol.
+ */
 @protocol GFYFlagMediaViewControllerDelegate <NSObject>
 @optional
+
+/**
+ <#Description#>
+
+ @param flagController <#flagController description#>
+ */
 - (void)gfycatFlagMediaViewControllerDidCancel:(GFYFlagMediaViewController *)flagController;
+
+/**
+ <#Description#>
+
+ @param flagController <#flagController description#>
+ */
 - (void)gfycatFlagMediaViewControllerDidFlag:(GFYFlagMediaViewController *)flagController;
 
 @end
 
+/**
+ <#Description#>
+ */
 @interface GFYFlagMediaViewController : UIViewController
 
-+ (instancetype)gfycatFlagMediaViewControllerSettings:(id<GFYFlagMediaViewControllerSettings>)settings;
-- (instancetype)initWithSettings:(id<GFYFlagMediaViewControllerSettings>)settings;
+/**
+ <#Description#>
 
+ @param settings <#settings description#>
+ @return <#return value description#>
+ */
++ (instancetype)gfycatFlagMediaViewControllerSettings:(id<GFYFlagMediaViewControllerSettings> _Nullable)settings;
+
+/**
+ <#Description#>
+
+ @param settings <#settings description#>
+ @return <#return value description#>
+ */
+- (instancetype)initWithSettings:(id<GFYFlagMediaViewControllerSettings> _Nullable)settings;
+
+/**
+ <#Description#>
+ */
 @property (nonatomic, copy) id<GFYFlagMediaViewControllerSettings> settings;
 
+/**
+ <#Description#>
+ */
 @property (nonatomic, weak) id<GFYFlagMediaViewControllerDelegate> delegate;
+
+/**
+ <#Description#>
+ */
 @property (nonatomic, strong) GfycatMedia *media;
 
 @end
+
+NS_ASSUME_NONNULL_END

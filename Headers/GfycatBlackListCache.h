@@ -108,6 +108,8 @@
 
 #import <GfycatApiKit/GfycatApiKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol GfycatBlackListCache <NSObject>
 
 - (NSSet<NSString *> *)mediaIdsBlackList;
@@ -119,3 +121,5 @@
 - (BOOL)removeMediaIdFromBlackList:(NSString *)media;
 
 @end
+
+NS_ASSUME_NONNULL_END
