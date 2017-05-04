@@ -122,11 +122,13 @@ FOUNDATION_EXPORT const unsigned char GfycatKitVersionString[];
 #import <GfycatKit/UICollectionView+GfycatInterface.h>
 #import <GfycatKit/UIColor+GfycatInterface.h>
 #import <GfycatKit/UINib+GfycatInterface.h>
+#import <GfycatKit/UIScrollView+GfycatInterface.h>
 #import <GfycatKit/UITableView+GfycatInterface.h>
 // Utils.UICollectionView
 #import <GfycatKit/GFYPresenterView.h>
 #import <GfycatKit/GFYReusableView.h>
 #import <GfycatKit/GFYCollectionViewCell.h>
+#import <GfycatKit/GFYCollectionViewManager.h>
 // Utils.ViewControllers
 #import <GfycatKit/GFYSimpleContainerViewController.h>
 // Utils.Views
