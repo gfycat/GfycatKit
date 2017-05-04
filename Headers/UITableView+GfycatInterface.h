@@ -107,7 +107,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIScrollView+GfycatInterface.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
