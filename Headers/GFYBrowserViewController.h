@@ -189,6 +189,11 @@ typedef void (^GFYBrowserSelectionHandler)(GfycatMedia *item, GfycatCategory *fe
  */
 - (void)showCategories;
 
+/**
+ Cancels search if it's active
+ */
+- (void)cancelSearch;
+
 @end
 
 NS_ASSUME_NONNULL_END
