@@ -235,6 +235,14 @@ extern const GFYAnalyticsFlow GFYAnalyticsFlowNone;
  */
 - (void)trackVideoPlayedWithGfyId:(NSString *)gfyid context:(GFYAnalyticsContext)context keyword:(NSString * _Nullable)keyword flow:(GFYAnalyticsFlow)flow ip:(NSString *)ip time:(NSString *)time;
 
+/**
+ This event can be used to track when an asset is broken.
+ 
+ @param gfyid Gfycat name of the target video.
+ @param assetUrl Gfycat url of the target video.
+ */
+- (void)trackBrokenMediaWithGfyId:(NSString *)gfyid assetUrl:(NSURL *)assetUrl;
+
 @end
 
 @interface GFYAnalyticsHub (GFYInterfaceAnalytics) <GFYInterfaceAnalytics>
