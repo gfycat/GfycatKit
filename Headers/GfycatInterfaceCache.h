@@ -122,6 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)serializeSearchHistory:(NSArray<NSString *> *)searchHistory;
 - (NSArray<NSString *> *)deserializeSearchHistory;
 - (BOOL)addSearchTerm:(NSString *)searchTerm;
+- (BOOL)hasSearchHistory;
 
 @end
 
