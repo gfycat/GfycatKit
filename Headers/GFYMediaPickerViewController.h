@@ -229,6 +229,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)gfycatMediaPicker:(GFYMediaPickerViewController *)picker didFlagMedia:(GfycatMedia *)media withSource:(id<GFYArraySource>)source;
 
+/**
+ <#Description#>
+ */
+- (UIView * _Nullable)gfycatMediaPicker:(GFYMediaPickerViewController *)picker overlayViewForMedia:(GfycatMedia *)media;
+
 @end
 
 /**
