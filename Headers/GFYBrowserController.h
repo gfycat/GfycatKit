@@ -160,16 +160,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)gfycatBrowser:(GFYBrowserController *)browser setSearchText:(NSString * _Nullable)searchText;
 
-@optional
-
-/**
- <#Description#>
-
- @param browser <#browser description#>
- @param expanded <#expanded description#>
- */
-- (void)gfycatBrowser:(GFYBrowserController *)browser requestExpandedState:(BOOL)expanded;
-
 @end
 
 /**

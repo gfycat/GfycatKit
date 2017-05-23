@@ -141,7 +141,7 @@ typedef void (^GFYBrowserSelectionHandler)(GfycatMedia *item, GfycatCategory *fe
  @param browser `GFYBrowserViewController` instance
  @param expanded specifies if the UI should be expanded
  */
-- (void)gfycatBrowser:(GFYBrowserViewController *)browser requestExpandedState:(BOOL)expanded;
+- (void)gfycatBrowser:(GFYBrowserViewController *)browser requestExpandedState:(BOOL)expanded completion:(void(^)(void))completion;
 
 @end
 
