@@ -135,6 +135,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)didEndDisplaying;
 
+/**
+ Called by a container when view was disappeared.
+ */
+- (void)didDisappear;
+
 @end
 
 NS_ASSUME_NONNULL_END

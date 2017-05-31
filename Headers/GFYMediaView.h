@@ -188,6 +188,8 @@ typedef void (^GFYMediaViewPlaybackStartedHandler)(GfycatMedia *media);
  */
 @property (nonatomic, assign) GFYMediaViewFormat mediaFormat;
 
+- (void)cancelLoading;
+
 @end
 
 NS_ASSUME_NONNULL_END
