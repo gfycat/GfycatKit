@@ -285,7 +285,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  <#Description#>
  */
-- (void)scrollToModel:(id)model atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
+- (void)scrollModel:(id)model toVisibleAnimated:(BOOL)animated;
 
 @end
 
