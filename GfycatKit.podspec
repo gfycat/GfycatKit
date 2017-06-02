@@ -20,6 +20,8 @@ Pod::Spec.new do |s|
 
   s.dependency 'YYWebImage'
   s.dependency 'YYImage/WebP'
-  s.dependency 'GfycatApiKit', '~> 0.0.5'
+  s.dependency 'GfycatApiKit', '~> 0.0.6'
+  s.dependency 'CocoaImageHashing'
+  s.dependency 'FMDB', '~> 2.6'
 
 end

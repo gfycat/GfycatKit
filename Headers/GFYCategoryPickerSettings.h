@@ -167,6 +167,11 @@ NS_SWIFT_NAME(GFYCategoryPickerSettingsProtocol)
 @property (nonatomic, assign) GFYMediaViewFormat categoryMediaFormat;
 
 /**
+ Toggles user's Photo Moments category
+ */
+@property (nonatomic, assign) BOOL enablePhotoMoments;
+
+/**
  Toggles recent items category
  */
 @property (nonatomic, assign) BOOL enableRecentItems;

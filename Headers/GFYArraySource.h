@@ -136,7 +136,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GFYArraySource <NSObject>
 
-- (id<GFYArrayProvider>)createProviderWithConsumer:(id<GFYArrayConsumer>)consumer blackListCache:(id<GfycatBlackListCache>)blackListCache;
+- (id<GFYArrayProvider>)createProviderWithConsumer:(id<GFYArrayConsumer>)consumer blackListCache:(id<GfycatBlackListCache> _Nullable)blackListCache;
+- (id<GFYArrayProvider>)createProviderWithConsumer:(id<GFYArrayConsumer>)consumer;
 
 @property (nonatomic, readonly) NSString *localizedTitle;
 @property (nonatomic, readonly) NSString *localizedErrorMessage;

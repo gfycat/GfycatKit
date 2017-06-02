@@ -111,6 +111,7 @@
 #import "GFYMediaPickerSettings.h"
 #import "GFYSearchHistorySettings.h"
 #import "GFYFlagMediaViewControllerSettings.h"
+#import "GFYPhotoMomentsPickerSettings.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -118,7 +119,7 @@ NS_ASSUME_NONNULL_BEGIN
  <#Description#>
  */
 NS_SWIFT_NAME(GFYBrowserSettingsProtocol)
-@protocol GFYBrowserSettings <NSObject, NSCopying, GFYCategoryPickerSettings, GFYMediaPickerSettings, GFYSearchHistorySettings, GFYFlagMediaViewControllerSettings>
+@protocol GFYBrowserSettings <NSObject, NSCopying, GFYCategoryPickerSettings, GFYMediaPickerSettings, GFYSearchHistorySettings, GFYFlagMediaViewControllerSettings, GFYPhotoMomentsPickerSettings>
 
 /**
  Toggles search history

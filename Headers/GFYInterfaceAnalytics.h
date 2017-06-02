@@ -132,6 +132,10 @@ extern const GFYAnalyticsContext GFYAnalyticsContextCategoryList;
 extern const GFYAnalyticsContext GFYAnalyticsContextRecent;
 
 /**
+ User is browsing photo moments
+ */
+extern const GFYAnalyticsContext GFYAnalyticsContextPhotoMoments;
+/**
  User is browsing a category
  */
 extern const GFYAnalyticsContext GFYAnalyticsContextCategory;
@@ -160,6 +164,15 @@ extern const GFYAnalyticsFlow GFYAnalyticsFlowHalf;
  Browsing flow is unknown
  */
 extern const GFYAnalyticsFlow GFYAnalyticsFlowNone;
+
+typedef NSString *GFYPhotoMomentTrackingType NS_EXTENSIBLE_STRING_ENUM;
+
+extern const GFYPhotoMomentTrackingType GFYPhotoMomentTrackingTypeNone;
+extern const GFYPhotoMomentTrackingType GFYPhotoMomentTrackingTypeVideo;
+extern const GFYPhotoMomentTrackingType GFYPhotoMomentTrackingTypeTimelapse;
+extern const GFYPhotoMomentTrackingType GFYPhotoMomentTrackingTypeLivePhoto;
+extern const GFYPhotoMomentTrackingType GFYPhotoMomentTrackingTypeBurst;
+extern const GFYPhotoMomentTrackingType GFYPhotoMomentTrackingTypePhotoGroup;
 
 /**
  The `GFYInterfaceAnalytics` protocol defines analytics events collecte by the `GfycatKit`
@@ -242,6 +255,22 @@ extern const GFYAnalyticsFlow GFYAnalyticsFlowNone;
  @param assetUrl Gfycat url of the target video.
  */
 - (void)trackBrokenMediaWithGfyId:(NSString *)gfyid assetUrl:(NSURL *)assetUrl;
+
+- (void)trackPhotoMomentsOpen;
+- (void)trackViewPhotoMomentWithType:(GFYPhotoMomentTrackingType)momentType;
+- (void)trackCreatePhotoMomentPreviewWithType:(GFYPhotoMomentTrackingType)momentType;
+
+
+- (void)trackPhotoMomentContentUploadSucceededWithGfyName:(NSString * _Nullable)gfyName duration:(NSNumber * _Nullable)duration
+                                               encodeTime:(NSNumber * _Nullable)encodeTime uploadTime:(NSNumber * _Nullable)uploadTime
+                                               serverTime:(NSNumber * _Nullable)serverTime;
+- (void)trackPhotoMomentContentUploadFailedWithGfyName:(NSString * _Nullable)gfyName duration:(NSNumber * _Nullable)duration
+                                            encodeTime:(NSNumber * _Nullable)encodeTime uploadTime:(NSNumber * _Nullable)uploadTime
+                                            serverTime:(NSNumber * _Nullable)serverTime stage:(NSString *)stage;
+- (void)trackPhotoMomentContentUploadCancelledWithGfyName:(NSString * _Nullable)gfyName duration:(NSNumber * _Nullable)duration
+                                               encodeTime:(NSNumber * _Nullable)encodeTime uploadTime:(NSNumber * _Nullable)uploadTime
+                                               serverTime:(NSNumber * _Nullable)serverTime stage:(NSString *)stage;
+- (void)trackPhotoMomentContentEncodingFinishedWithMediaDuration:(NSNumber *)duration encodeDuration:(NSNumber *)encodingDuration;
 
 @end
 

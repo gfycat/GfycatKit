@@ -148,6 +148,7 @@ FOUNDATION_EXPORT const unsigned char GfycatKitVersionString[];
 #import <GfycatKit/GFYCategoryMediaArraySource.h>
 #import <GfycatKit/GFYRecentMediaArraySource.h>
 #import <GfycatKit/GFYSearchMediaArraySource.h>
+#import <GfycatKit/GFYPhotoMomentsArraySource.h>
 // Categories
 #import <GfycatKit/GfycatMedia+GFYArrangable.h>
 #import <GfycatKit/GfycatCategory+GFYArrangable.h>
@@ -159,6 +160,7 @@ FOUNDATION_EXPORT const unsigned char GfycatKitVersionString[];
 #import <GfycatKit/GFYCategoryPickerSettings.h>
 #import <GfycatKit/GFYCategoryPickerViewController.h>
 #import <GfycatKit/GFYRecentCategoryCollectionViewCellModel.h>
+#import <GfycatKit/GFYPhotoMomentCategoryCollectionViewCell.h>
 // Components.MediaPicker
 #import <GfycatKit/GFYMediaPickerSettings.h>
 #import <GfycatKit/GFYMediaPickerViewController.h>
@@ -169,7 +171,16 @@ FOUNDATION_EXPORT const unsigned char GfycatKitVersionString[];
 // Components.Reporting
 #import <GfycatKit/GFYFlagMediaViewControllerSettings.h>
 #import <GfycatKit/GFYFlagMediaViewController.h>
+// Components.PhotoMoments
+#import <GfycatKit/GFYPhotoMoment.h>
+#import <GfycatKit/GFYPhotoMomentView.h>
+#import <GfycatKit/GFYPhotoMomentsManager.h>
+#import <GfycatKit/GFYPhotoMomentsPickerSettings.h>
+#import <GfycatKit/GFYPhotoMomentsPickerViewController.h>
+#import <GfycatKit/GFYPhotoMomentCollectionViewCell.h>
 // Analytics
 #import <GfycatKit/GFYAnalyticsHub.h>
 #import <GfycatKit/GFYAnalyticsTrackerBase.h>
 #import <GfycatKit/GFYInterfaceAnalytics.h>
+// Account
+#import <GfycatKit/GFYAccountManager.h>
