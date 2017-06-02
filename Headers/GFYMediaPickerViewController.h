@@ -282,6 +282,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly) UICollectionView *collectionView;
 
+/**
+ <#Description#>
+ */
+- (void)scrollToModel:(id)model atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
+
 @end
 
 NS_ASSUME_NONNULL_END

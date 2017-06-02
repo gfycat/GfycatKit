@@ -152,6 +152,8 @@ IB_DESIGNABLE
 - (void)willLayoutSubviews;
 - (void)didLayoutSubviews;
 
+- (void)scrollToModel:(id)model atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
+
 @end
 
 NS_ASSUME_NONNULL_END

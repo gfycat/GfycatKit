@@ -232,6 +232,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)hasCategoryStartingWith:(NSString *)prefix;
 
+/**
+ <#Description#>
+ */
+- (void)scrollToModel:(id)model atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
+
 @end
 
 NS_ASSUME_NONNULL_END
