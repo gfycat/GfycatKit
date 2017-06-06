@@ -156,6 +156,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, readonly) UICollectionView *collectionView;
 
+/**
+ <#Description#>
+ */
+- (void)scrollModel:(id)model toVisibleAnimated:(BOOL)animated;
+
 @end
 
 NS_ASSUME_NONNULL_END
