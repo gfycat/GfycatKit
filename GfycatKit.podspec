@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = 'GfycatKit'
-  s.version             = '0.0.35'
+  s.version             = '0.0.36'
   s.summary             = 'GfycatKit for iOS'
   s.description         = 'GfycatKit provides UI components to build experiences using Gfycat.'
   s.homepage            = 'https://developers.gfycat.com/api/'
@@ -10,18 +10,45 @@ Pod::Spec.new do |s|
   s.source              = { :git => 'https://github.com/gfycat/GfycatKit.git', :tag => s.version.to_s }
   s.social_media_url    = 'https://twitter.com/gfycat'
 
-  s.platform            = :ios, '8.0'
-  s.requires_arc        = true
-  s.public_header_files = 'Headers/*.h'
-  s.source_files        = ['Headers/*.h', 'Sources/*']
-  s.vendored_libraries  = 'Libraries/libGfycat.a'
-  s.resource            = 'Resources/*.bundle'
-  s.xcconfig            = { 'OTHER_LDFLAGS' => '-ObjC' }
+  s.platform = :ios, '8.0'
+  s.requires_arc = true
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+  s.default_subspec = 'Core'
 
-  s.dependency 'YYWebImage'
-  s.dependency 'YYImage/WebP'
-  s.dependency 'GfycatApiKit', '~> 0.0.6'
-  s.dependency 'CocoaImageHashing'
-  s.dependency 'FMDB', '~> 2.6'
+  s.subspec 'Core' do |sp|
+    sp.platform = :ios, '8.0'
+    sp.dependency 'GfycatKit/Browser'
+    sp.vendored_frameworks = 'Libraries/GfycatKit.framework'
+  end
+
+  s.subspec 'Browser' do |sp|
+    sp.platform = :ios, '8.0'
+    sp.dependency 'YYWebImage'
+    sp.dependency 'YYImage/WebP'
+    sp.dependency 'GfycatApiKit', '~> 0.0.7'
+    sp.resources = 'Libraries/GfycatBrowserKitResources.bundle'
+    sp.vendored_frameworks = 'Libraries/GfycatBrowserKit.framework'
+    sp.frameworks = 'UIKit', 'AVFoundation', 'CoreMedia', 'Photos'
+  end
+
+  s.subspec 'PhotoMoments' do |sp|
+    sp.platform = :ios, '9.0'
+    sp.dependency 'GfycatKit/Core'
+    sp.dependency 'CocoaImageHashing'
+    sp.dependency 'FMDB', '~> 2.6'
+    sp.dependency 'YYWebImage'
+    sp.dependency 'YYImage/WebP'
+    sp.resources = 'Libraries/GfycatPhotoMomentsKitResources.bundle'
+    sp.vendored_frameworks = 'Libraries/GfycatPhotoMomentsKit.framework'
+    sp.weak_frameworks = 'Vision', 'CoreML'
+  end
+
+  s.subspec 'Ads' do |sp|
+    sp.platform = :ios, '8.0'
+    sp.dependency 'GfycatKit/Core'
+    sp.dependency 'FBAudienceNetwork', '~> 4.26'
+    sp.resources = 'Libraries/GfycatAdsKitResources.bundle'
+    sp.vendored_frameworks = 'Libraries/GfycatAdsKit.framework'
+  end
 
 end

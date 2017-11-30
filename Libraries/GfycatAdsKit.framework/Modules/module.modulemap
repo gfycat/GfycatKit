@@ -1,0 +1,6 @@
+framework module GfycatAdsKit {
+  umbrella header "GfycatAdsKit.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module GfycatPhotoMomentsKit {
+  umbrella header "GfycatPhotoMomentsKit.h"
+
+  export *
+  module * { export * }
+}
