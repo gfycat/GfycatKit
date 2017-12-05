@@ -108,8 +108,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GFYArrayDiff.h"
-#import <GfycatApiKit/GfycatMedia.h>
-#import <GfycatApiKit/GfycatApiConstants.h>
+#import <GfycatApiKit/GfycatApiKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
