@@ -128,7 +128,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GFYPhotoMomentCollectionViewCell : GFYCollectionViewCell<GFYPhotoMoment *>
 
-@property (nonatomic, weak) id<GFYPhotoMomentCollectionViewCellDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYPhotoMomentCollectionViewCellDelegate> delegate;
 
 @end
 

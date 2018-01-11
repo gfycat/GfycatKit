@@ -111,6 +111,7 @@
 #import "GFYBrowserController.h"
 #import "GFYCategoryPickerViewController.h"
 #import "GFYMediaPickerViewController.h"
+#import "GFYRecentsMediaPickerViewController.h"
 #import "GFYNavigationView.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -132,7 +133,7 @@ typedef void (^GFYBrowserSelectionHandler)(GfycatMedia *item, GfycatCategory *fe
  `GFYCategoryPickerViewController`, `GFYMediaPickerViewController`, `GFYSearchHistoryViewController`
  and `GFYFlagMediaViewControllerViewController` which it presents as needed.
  */
-@protocol GFYBrowserDelegate <NSObject, GFYCategoryPickerDelegate, GFYMediaPickerDelegate>
+@protocol GFYBrowserDelegate <NSObject, GFYCategoryPickerDelegate, GFYMediaPickerDelegate, GFYRecentsMediaPickerDelegate>
 @optional
 
 /**
@@ -179,7 +180,7 @@ typedef void (^GFYBrowserSelectionHandler)(GfycatMedia *item, GfycatCategory *fe
 /**
  Browser delegate
  */
-@property (nonatomic, weak) id<GFYBrowserDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYBrowserDelegate> delegate;
 
 /**
  Called by the browser controller when user selects a video
@@ -196,6 +197,7 @@ typedef void (^GFYBrowserSelectionHandler)(GfycatMedia *item, GfycatCategory *fe
  */
 - (void)cancelSearch;
 
+- (void)showRecents;
 - (void)showPhotoMoments;
 
 - (void)refreshContent;

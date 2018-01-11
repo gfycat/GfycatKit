@@ -111,6 +111,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class GFYRecentsMediaPickerViewController;
+@class GFYNavigationViewTabModel;
+
+@protocol GFYRecentsMediaPickerDelegate <GFYMediaPickerDelegate>
+@optional
+
+- (void)gfycatRecentsMediaPicker:(GFYRecentsMediaPickerViewController *)picker didSelectSharedNavigationTab:(GFYNavigationViewTabModel *)tabModel;
+
+@end
+
 /**
  `GFYRecentsMediaPickerViewController` provides a convenient interface to pick recent media from Gfycat.
  */
@@ -136,6 +146,8 @@ NS_ASSUME_NONNULL_BEGIN
  <#Description#>
  */
 @property (nonatomic, copy) GFYRecentsMediaPickerSettings *settings;
+
+@property (nonatomic, weak, nullable) id<GFYRecentsMediaPickerDelegate> delegate;
 
 @end
 

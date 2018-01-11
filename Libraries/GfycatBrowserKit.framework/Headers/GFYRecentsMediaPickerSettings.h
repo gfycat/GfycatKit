@@ -118,6 +118,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL enableRecentsGrouping;
 
+@property (nonatomic, assign) BOOL enableSharedGrouping;
+
 /**
  Toggles favorite items category
  default value 'NO'

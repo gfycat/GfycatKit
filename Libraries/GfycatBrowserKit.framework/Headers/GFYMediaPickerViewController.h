@@ -300,12 +300,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  <#Description#>
  */
-@property (nonatomic, weak) id<GFYMediaPickerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYMediaPickerDelegate> delegate;
 
 /**
  <#Description#>
  */
 @property (nonatomic, strong) id<GFYArraySource> arraySource;
+
+@property (nonatomic, assign, readonly, getter=isLoadingContent) BOOL loadingContent;
 
 /**
  <#Description#>

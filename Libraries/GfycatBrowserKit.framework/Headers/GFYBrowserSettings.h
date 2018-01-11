@@ -141,7 +141,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol _GFYBrowserComponent <NSObject>
 
-@property (nonatomic, weak) id delegate;
+@property (nonatomic, weak, nullable) id delegate;
+
++ (BOOL)isEnabledWithSettings:(GFYBrowserSettings *)settings;
 
 - (void)prefetch;
 - (void)prepareWithCompletion:(void(^)(BOOL success))completionHandler;

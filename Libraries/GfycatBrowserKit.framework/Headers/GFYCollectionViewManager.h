@@ -139,7 +139,7 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable CGSize cellAspectRatio;
 
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, weak) IBOutlet id<GFYCollectionViewDelegate> delegate;
+@property (nonatomic, weak, nullable) IBOutlet id<GFYCollectionViewDelegate> delegate;
 
 @property (nonatomic, copy, nullable) NSArray<id<GFYCollectionViewSection>> *model;
 @property (nonatomic, copy, nullable) void (^selectionHandler)(id model, NSIndexPath *indexPath);

@@ -173,7 +173,7 @@ typedef void (^GFYMediaViewPlaybackStartedHandler)(GfycatReferencedMedia *media)
 /**
  <#Description#>
  */
-@property (nonatomic, weak) IBOutlet id<GFYMediaViewDelegate> delegate;
+@property (nonatomic, weak, nullable) IBOutlet id<GFYMediaViewDelegate> delegate;
 
 /**
  <#Description#>

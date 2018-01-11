@@ -210,7 +210,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  <#Description#>
  */
-@property (nonatomic, weak) id<GFYCategoryPickerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYCategoryPickerDelegate> delegate;
 
 /**
  <#Description#>

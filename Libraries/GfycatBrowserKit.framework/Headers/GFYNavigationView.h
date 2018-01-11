@@ -139,7 +139,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GFYNavigationView : UIView
 
-@property (nonatomic, weak) id<GFYNavigationViewDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYNavigationViewDelegate> delegate;
 
 - (void)setNavigationItem:(UINavigationItem *)navigationItem;
 
@@ -148,6 +148,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) UIColor *searchBarBorderColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong, nullable) UIColor *searchBarBackgroundColor UI_APPEARANCE_SELECTOR;
 
+@property (nonatomic, weak) UIView *shadowHolder;
+- (void)showShadowWithOpacity:(CGFloat)opacity;
+- (void)hideShadow;
+    
 @end
 
 NS_ASSUME_NONNULL_END

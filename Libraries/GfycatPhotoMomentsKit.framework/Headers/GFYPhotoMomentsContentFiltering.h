@@ -1,8 +1,8 @@
 //
-//  GFYPhotoMomentsPickerViewController.h
+//  GFYPhotoMomentsContentFiltering.h
 //  GfycatPhotoMomentsKit
 //
-//  Created by Oleksii Chubenko on 5/19/17.
+//  Created by Oleksii Chubenko on 9/6/17.
 //  Copyright © 2017 Gfycat. All rights reserved.
 //
 //  End-User License Agreement for Gfycat Software Product
@@ -106,73 +106,13 @@
 //  Santa Clara County, California shall exclusive jurisdiction.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@class GFYPhotoMomentsPickerSettings;
-
-@class GFYPhotoMomentsPickerViewController;
-@class GFYPhotoMoment;
-@protocol GFYArraySource;
-@class GFYNavigationView;
-@class GFYNavigationViewTabModel;
-@protocol GFYCollectionViewSection;
-
-@protocol GFYPhotoMomentsPickerDelegate <NSObject>
-@optional
-
-// MARK: Customization
-- (NSArray<id<GFYCollectionViewSection>> *)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker customizeModel:(NSArray<id<GFYCollectionViewSection>> *)model;
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker customizeView:(UICollectionViewCell *)view forPhotoMoment:(GFYPhotoMoment *)moment;
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker customizeView:(UICollectionViewCell *)view forItem:(id)model;
-
-// MARK: Selection handling
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker didSelectPhotoMoment:(GFYPhotoMoment *)moment withSource:(id<GFYArraySource>)source;
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker didSelectItem:(id)item withSource:(id<GFYArraySource>)source;
-- (void)gfycatPhotoMomentsPickerDidSelectCancel:(GFYPhotoMomentsPickerViewController *)picker;
-
-// MARK: Activity
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker setActivityIndicatorActive:(BOOL)active;
-
-// MARK: Preview handling
-- (UIViewController *)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker previewPhotoMoment:(GFYPhotoMoment *)moment
-                                    withSource:(id<GFYArraySource>)source;
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker previewPhotoMoment:(GFYPhotoMoment *)moment
-                      withSource:(id<GFYArraySource>)source commitViewController:(UIViewController *)viewController;
-
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker longPressPhotoMoment:(GFYPhotoMoment *)moment withSource:(id<GFYArraySource>)source;
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker longPressItem:(id)item withSource:(id<GFYArraySource>)source;
-
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker didFailWithError:(NSError * _Nullable)error withSource:(id<GFYArraySource>)source;
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker gotEmptyListWithSource:(id<GFYArraySource>)source;
-
-// MARK: NavigationView
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker didSelectSharedNavigationTab:(GFYNavigationViewTabModel *)tabModel;
-
-@end
-
-@interface GFYPhotoMomentsPickerViewController : UIViewController
-
-+ (instancetype)pickerWithSettings:(GFYPhotoMomentsPickerSettings * _Nullable)settings;
-
-- (instancetype)initWithSettings:(GFYPhotoMomentsPickerSettings * _Nullable)settings;
-
-@property (nonatomic, copy) GFYPhotoMomentsPickerSettings *settings;
-
-@property (nonatomic, weak, nullable) id<GFYPhotoMomentsPickerDelegate> delegate;
-
-@property (nonatomic, strong) id<GFYArraySource> arraySource;
-@property (nonatomic, assign, readonly, getter=isLoadingContent) BOOL loadingContent;
-- (void)refreshArraySource;
-
-@property (nonatomic, strong, readonly) IBOutlet UICollectionView *collectionView;
-
-/**
- <#Description#>
- */
-- (void)scrollModel:(id)model toVisibleAnimated:(BOOL)animated;
-
-@end
-
-NS_ASSUME_NONNULL_END
+typedef NS_OPTIONS(int64_t, GFYPhotoMomentFilteringAlgorithm)
+{
+    GFYPhotoMomentFilteringAlgorithm_None = 0,
+    
+    GFYPhotoMomentFilteringAlgorithm_GeoLocation = 1 << 0,
+    GFYPhotoMomentFilteringAlgorithm_TemporalProximity = 1 << 1,
+    GFYPhotoMomentFilteringAlgorithm_Selfie = 1 << 2
+};

@@ -165,7 +165,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  <#Description#>
  */
-@property (nonatomic, weak) id<GFYFlagMediaViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYFlagMediaViewControllerDelegate> delegate;
 
 /**
  <#Description#>

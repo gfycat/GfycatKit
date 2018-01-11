@@ -125,36 +125,42 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GFYPhotoMomentsPickerSettings : NSObject <NSCopying>
 
 /**
+ Defines if component enabled. YES by default
+ */
+@property (nonatomic, assign, getter=isEnabled) BOOL enabled;
+/**
  Cell corner radius
  */
-@property (nonatomic, assign) CGFloat momentsCornerRadius;
+@property (nonatomic, assign) CGFloat cornerRadius;
 
 /**
  Item spacing in collection view
  */
-@property (nonatomic, assign) CGFloat momentsItemSpacing;
+@property (nonatomic, assign) CGFloat itemSpacing;
 
 /**
  Edge insets in collection view
  */
-@property (nonatomic, assign) UIEdgeInsets momentsContentInset;
+@property (nonatomic, assign) UIEdgeInsets contentInset;
 
 /**
  Scroll direction
  */
-@property (nonatomic, assign) UICollectionViewScrollDirection momentsScrollDirection;
+@property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;
 
 /**
  Number of rows or colums, depending on scroll direction
  */
-@property (nonatomic, assign) NSInteger momentsGridSize;
+@property (nonatomic, assign) NSInteger gridSize;
+
+@property (nonatomic, assign) BOOL enableSharedGrouping;
 
 /**
  Defines mapping between model and view classes for custom items
  */
-@property (nonatomic, copy) NSDictionary<Class<GFYArrangable>, Class<GFYCollectionViewCell>> *momentsCellViews;
+@property (nonatomic, copy) NSDictionary<Class<GFYArrangable>, Class<GFYCollectionViewCell>> *cellViews;
 
-- (void)registerCellView:(Class<GFYCollectionViewCell>)cellView forPhotoMomentModel:(__kindof GFYPhotoMoment *)model;
+- (void)registerCellView:(Class<GFYCollectionViewCell>)cellView forItemModel:(Class<GFYArrangable>)model;
 
 @end
 

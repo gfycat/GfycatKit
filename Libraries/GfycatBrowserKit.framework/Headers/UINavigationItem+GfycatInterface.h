@@ -118,5 +118,7 @@ IB_DESIGNABLE
 @property (nonatomic, strong, nullable, setter=gfy_setSelectedTab:) IBInspectable NSString *gfy_selectedTab;
 @property (nonatomic, strong, nullable, setter=gfy_setNavigationTabs:) IBOutletCollection(GFYNavigationViewTabModel) NSArray<GFYNavigationViewTabModel *> *gfy_navigationTabs;
 @property (nonatomic, strong, nullable, setter=gfy_setSearchText:) IBInspectable NSString *gfy_searchText;
+@property (nonatomic, assign, setter=gfy_setShadowVisible:) IBInspectable BOOL gfy_shadowVisible;
+@property (nonatomic, assign, setter=gfy_setShadowOpacity:) IBInspectable CGFloat gfy_shadowOpacity;
 
 @end

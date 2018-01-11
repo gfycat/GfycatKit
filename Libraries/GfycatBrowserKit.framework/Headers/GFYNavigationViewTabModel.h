@@ -126,6 +126,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) UIImage *defaultIconImage;
 @property (nonatomic, strong, nullable) UIImage *selectedIconImage;
 
+@property (nonatomic, copy, nullable) NSString *title;
+@property (nonatomic, copy, nullable) NSString *subTitle;
+
 @property (nonatomic) GFYNavigationViewTabModelType modelType;
 
 @property (nonatomic, readonly, weak) id target;
@@ -144,11 +147,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface GFYNavigationViewTabModel (RecentTabs)
+@interface GFYNavigationViewTabModel (SharedTabs)
 
-+ (instancetype)createRecentsRecentTabModelWithTarget:(id)target action:(SEL)action;
-+ (instancetype)createRecentsLikeTabModelWithTarget:(id)target action:(SEL)action;
-+ (instancetype)createRecentsCreatedTabModelWithTarget:(id)target action:(SEL)action;
++ (instancetype)createSharedRecentsTabModelWithTarget:(id)target action:(SEL)action;
++ (instancetype)createSharedLikeTabModelWithTarget:(id)target action:(SEL)action;
++ (instancetype)createSharedCreatedTabModelWithTarget:(id)target action:(SEL)action;
++ (instancetype)createSharedPhotoMomentsTabModelWithTarget:(id)target action:(SEL)action;
 
 @end
 

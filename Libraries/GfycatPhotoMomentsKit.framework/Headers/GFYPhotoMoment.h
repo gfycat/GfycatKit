@@ -113,6 +113,7 @@
 #elif __has_include("GfycatBrowserKit.h")
 #   import "GfycatBrowserKit.h"
 #endif
+#import "GFYPhotoMomentsContentFiltering.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -140,6 +141,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, assign) CGSize contentSize;
 @property (nonatomic, readonly, copy, nullable) NSDate *creationDate;
 @property (nonatomic, readonly, strong, nullable) PHAsset *presenterAsset;
+
+@property (nonatomic, readonly, assign) GFYPhotoMomentFilteringAlgorithm filteringAlgorithm;
+- (instancetype)photoMomentByApplyingFilteringAlgorithm:(GFYPhotoMomentFilteringAlgorithm)filteringAlgorithm;
 
 - (id<GFYPhotoMomentRequest>)requestThumbnailWithSize:(CGSize)frameSize completionHandler:(void(^)(UIImage * _Nullable))completionHandler;
 - (id<GFYPhotoMomentRequest>)requestAnimatedImageWithSize:(CGSize)frameSize frameRate:(int32_t)fps completionHandler:(void(^)(UIImage<YYAnimatedImage> * _Nullable))completionHandler;

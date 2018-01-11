@@ -110,6 +110,7 @@
 #import "GFYBrowserSettings.h"
 #import "GFYCategoryPickerViewController.h"
 #import "GFYMediaPickerViewController.h"
+#import "GFYRecentsMediaPickerViewController.h"
 #import "GFYFlagMediaViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -120,7 +121,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The delegate of a `GFYBrowserController` object must adopt the `GFYBrowserControllerDelegate` protocol.
  */
-@protocol GFYBrowserControllerDelegate <NSObject, GFYCategoryPickerDelegate, GFYMediaPickerDelegate, GFYFlagMediaViewControllerDelegate>
+@protocol GFYBrowserControllerDelegate <NSObject, GFYCategoryPickerDelegate, GFYMediaPickerDelegate, GFYRecentsMediaPickerDelegate, GFYFlagMediaViewControllerDelegate>
 
 // MARK: required:
 /**
@@ -172,7 +173,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  <#Description#>
  */
-@property (nonatomic, weak) id<GFYBrowserControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYBrowserControllerDelegate> delegate;
 
 /**
  <#Description#>

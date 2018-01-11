@@ -117,6 +117,7 @@ FOUNDATION_EXPORT const unsigned char GfycatPhotoMomentsKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <GfycatPhotoMomentsKit/PublicHeader.h>
 
 #import "GFYPhotoMoment.h"
+#import "GFYPhotoMomentsContentFiltering.h"
 #import "GFYPhotoMomentsPickerSettings.h"
 #import "GFYPhotoMomentsPickerViewController.h"
 #import "GFYPhotoMomentCollectionViewCell.h"

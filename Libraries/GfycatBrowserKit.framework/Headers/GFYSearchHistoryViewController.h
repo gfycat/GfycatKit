@@ -157,7 +157,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  <#Description#>
  */
-@property (nonatomic, weak) id<GFYSearchHistoryViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<GFYSearchHistoryViewControllerDelegate> delegate;
 
 /**
  <#Description#>
