@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = 'GfycatKit'
-  s.version             = '0.0.41'
+  s.version             = '0.0.42'
   s.summary             = 'GfycatKit for iOS'
   s.description         = 'GfycatKit provides UI components to build experiences using Gfycat.'
   s.homepage            = 'https://developers.gfycat.com/api/'
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
     sp.platform = :ios, '8.0'
     sp.dependency 'YYWebImage'
     sp.dependency 'YYImage/WebP'
-    sp.dependency 'GfycatApiKit', '~> 0.0.10'
+    sp.dependency 'GfycatApiKit', '~> 0.0.11'
     sp.resources = 'Libraries/GfycatBrowserKitResources.bundle'
     sp.vendored_frameworks = 'Libraries/GfycatBrowserKit.framework'
     sp.frameworks = 'UIKit', 'AVFoundation', 'CoreMedia', 'Photos'
