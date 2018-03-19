@@ -148,6 +148,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSArray<NSNumber *> *insertItems;
 @property (nonatomic, readonly) NSArray<GFYArrayDiffMove *> *moveReloadItems;
 @property (nonatomic, readonly, getter=isEmpty) BOOL empty;
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end
 
