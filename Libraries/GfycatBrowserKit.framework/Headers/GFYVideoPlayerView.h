@@ -112,6 +112,8 @@
 
 @protocol GFYVideoPlayerViewDelegate <NSObject>
 - (void)videoPlayerWillPlay:(GFYVideoPlayerView *)playerView;
+@optional
+- (void)videoPlayerWillStartFromBeginning:(GFYVideoPlayerView *)playerView;
 @end
 
 @interface GFYVideoPlayerView : UIView

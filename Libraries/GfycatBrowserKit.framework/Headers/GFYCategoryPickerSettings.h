@@ -166,14 +166,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) GFYMediaViewFormat categoryMediaFormat;
 
 /**
- Font to be used for category titles
+ Text attributes to be used for category titles
  */
-@property (nonatomic, strong) UIFont *categoryTitleFont;
-
-/**
- Text color to be used for category titles
- */
-@property (nonatomic, strong) UIColor *categoryTitleColor;
+@property (nullable, nonatomic, copy) NSDictionary<NSAttributedStringKey, id> *titleTextAttributes;
 
 /**
  Placeholder colors to be used as an averagecolor override
@@ -194,6 +189,12 @@ NS_ASSUME_NONNULL_BEGIN
  Toggles recent items category
  */
 @property (nonatomic, assign) BOOL enableRecentItems;
+
+/**
+ Toggles automatic spatial content playback
+ Default: NO
+ */
+@property (nonatomic, assign) BOOL enableSpatialContent;
 
 /**
  Defines mapping between model and view classes for custom items

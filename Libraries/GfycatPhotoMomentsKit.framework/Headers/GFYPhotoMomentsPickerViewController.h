@@ -132,9 +132,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker didSelectItem:(id)item withSource:(id<GFYArraySource>)source;
 - (void)gfycatPhotoMomentsPickerDidSelectCancel:(GFYPhotoMomentsPickerViewController *)picker;
 
-// MARK: Activity
-- (void)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker setActivityIndicatorActive:(BOOL)active;
-
 // MARK: Preview handling
 - (UIViewController *)gfycatPhotoMomentsPicker:(GFYPhotoMomentsPickerViewController *)picker previewPhotoMoment:(GFYPhotoMoment *)moment
                                     withSource:(id<GFYArraySource>)source;

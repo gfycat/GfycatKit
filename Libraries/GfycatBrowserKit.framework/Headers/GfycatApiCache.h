@@ -117,6 +117,12 @@ NS_SWIFT_NAME(GfycatApiCacheProtocol)
 - (BOOL)serializeCategories:(GfycatCategories *)categories;
 - (GfycatCategories *)deserializeCategories;
 
+- (BOOL)serializeGamingCategories:(GfycatCategories *)categories;
+- (GfycatCategories *)deserializeGamingCategories;
+
+- (BOOL)serializeCategory:(NSString *)categoryTitle media:(GfycatMediaCollectionWithPaginatedInfo *)mediaCollection;
+- (GfycatMediaCollectionWithPaginatedInfo *)deserializeCategoryMedia:(NSString *)categoryTitle;
+
 @end
 
 #pragma mark - GfycatApiProtocol -
@@ -226,13 +232,58 @@ NS_SWIFT_NAME(GfycatApiProtocol)
                  failure:(nullable GfycatFailureBlock)failure;
 
 /**
+ *  Get user-specific information about a Media object.
+ *
+ *  @param media    Media object.
+ *  @param success  Provides original media object and its like state.
+ *  @param failure  Provides an error and a server status code.
+ */
+- (void)getLikeStateForMedia:(GfycatMedia *)media
+                 withSuccess:(GfycatMediaLikeStateBlock)success
+                     failure:(nullable GfycatFailureBlock)failure;
+
+/**
  *  Get list of all categories.
  *
  *  @param success  Provides a media list object.
  *  @param failure  Provides an error and a server status code.
  */
-- (void)getCategoriesWithSuccess:(GfycatCategoryArrayBlock)success
+- (void)getCategoriesCount:(NSInteger)count
+               withSuccess:(GfycatCategoryArrayBlock)success
+                   failure:(nullable GfycatFailureBlock)failure;
+
+/**
+ *  Get list of all gaming categories.
+ *
+ *  @param success  Provides a media list object.
+ *  @param failure  Provides an error and a server status code.
+ */
+- (void)getGamingCategoriesCount:(NSInteger)count
+                     withSuccess:(GfycatCategoryArrayBlock)success
                          failure:(nullable GfycatFailureBlock)failure;
+
+/**
+ *  Get a list of trending media objects.
+ *
+ *  @param count    Count of objects to fetch.
+ *  @param success  Provides an array of Media objects and Pagination info.
+ *  @param failure  Provides an error and a server status code.
+ */
+- (void)getTrendingMediaCount:(NSInteger)count
+                  withSuccess:(GfycatMediaCacheableBlock)success
+                      failure:(nullable GfycatFailureBlock)failure;
+/**
+ *  Get a list of media objects from a user.
+ *
+ *  @param userName User name.
+ *  @param count    Count of objects to fetch.
+ *  @param success  Provides an array of Media objects and Pagination info.
+ *  @param failure  Provides an error and a server status code.
+ */
+- (void)getUserMedia:(NSString *)userName
+               count:(NSInteger)count
+         withSuccess:(GfycatMediaCacheableBlock)success
+             failure:(nullable GfycatFailureBlock)failure;
 
 /**
  *  Get a list of media objects from a category.
@@ -244,8 +295,21 @@ NS_SWIFT_NAME(GfycatApiProtocol)
  */
 - (void)getCategoryMedia:(NSString *)categoryTitle
                    count:(NSInteger)count
-             WithSuccess:(GfycatMediaBlock)success
+             withSuccess:(GfycatMediaCacheableBlock)success
                  failure:(nullable GfycatFailureBlock)failure;
+
+/**
+ *  Get a list of media objects from a category.
+ *
+ *  @param categoryTitle Title of category.
+ *  @param count    Count of objects to fetch.
+ *  @param success  Provides an array of Media objects and Pagination info.
+ *  @param failure  Provides an error and a server status code.
+ */
+- (void)getGamingCategoryMedia:(NSString *)categoryTitle
+                         count:(NSInteger)count
+                   withSuccess:(GfycatMediaCacheableBlock)success
+                       failure:(nullable GfycatFailureBlock)failure;
 
 /**
  *  Search published Media with string.
@@ -347,6 +411,17 @@ NS_SWIFT_NAME(GfycatApiProtocol)
 - (void)deleteGfycatWithParameters:(nullable NSDictionary *)parameters
                            success:(GfycatUploadKeyBlock)success
                            failure:(nullable GfycatFailureBlock)failure;
+
+/**
+ *  Deletes a Gfycat target
+ *
+ *  @param mediaId  Id of a Media object.
+ *  @param success  Provides a dictionary server response if any.
+ *  @param failure  Provides an error and a server status code.
+ */
+- (void)deleteGfycatMedia:(NSString *)mediaId
+              withSuccess:(GfycatResponseBlock)success
+                  failure:(nullable GfycatFailureBlock)failure;
 
 #pragma mark - Report Gfycat Request -
 

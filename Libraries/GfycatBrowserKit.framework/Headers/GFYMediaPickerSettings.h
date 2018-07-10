@@ -181,6 +181,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL showScrollbars;
 
 /**
+ Toggles automatic spatial content playback
+ Default: NO
+ */
+@property (nonatomic, assign) BOOL enableSpatialContent;
+
+/**
  Defines mapping between model and view classes for custom items
  */
 @property (nonatomic, copy) NSDictionary<Class<GFYArrangable>, Class<GFYCollectionViewCell>> *mediaCellViews;

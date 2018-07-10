@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = 'GfycatKit'
-  s.version             = '0.0.44'
+  s.version             = '0.0.45'
   s.summary             = 'GfycatKit for iOS'
   s.description         = 'GfycatKit provides UI components to build experiences using Gfycat.'
   s.homepage            = 'https://developers.gfycat.com/api/'
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
     sp.platform = :ios, '8.0'
     sp.dependency 'YYWebImage'
     sp.dependency 'YYImage/WebP'
-    sp.dependency 'GfycatApiKit', '~> 0.0.15'
+    sp.dependency 'GfycatApiKit', '~> 0.0.16'
     sp.resources = 'Libraries/GfycatBrowserKitResources.bundle'
     sp.vendored_frameworks = 'Libraries/GfycatBrowserKit.framework'
     sp.frameworks = 'UIKit', 'AVFoundation', 'CoreMedia', 'Photos'
@@ -34,7 +34,6 @@ Pod::Spec.new do |s|
   s.subspec 'PhotoMoments' do |sp|
     sp.platform = :ios, '9.0'
     sp.dependency 'GfycatKit/Core'
-    sp.dependency 'CocoaImageHashing'
     sp.dependency 'FMDB', '~> 2.6'
     sp.dependency 'YYWebImage'
     sp.dependency 'YYImage/WebP'

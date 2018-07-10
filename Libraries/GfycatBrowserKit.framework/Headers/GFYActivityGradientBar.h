@@ -110,7 +110,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface GFYGradientBar : UIView
 
 /**
@@ -129,7 +129,7 @@ IB_DESIGNABLE
  Activity indicator bar view.
  Use UIAppearance to customize look of the bars in GfycatKit interface.
  */
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface GFYActivityGradientBar : GFYGradientBar
 
 /**

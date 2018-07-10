@@ -114,7 +114,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol GFYArrayConsumer;
 @class GFYMediaPickerViewController;
 @class GFYCollectionViewManager;
 
@@ -172,17 +171,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param source <#source description#>
  */
 - (void)gfycatMediaPicker:(GFYMediaPickerViewController *)picker didSelectItem:(id)item withSource:(id<GFYArraySource>)source;
-
-/**
- Delegate method `gfycatCategoryPicker:setActivityIndicatorActive:` is called by `GFYCategoryPickerViewController` when
- network activity is happening to allow the host application to display a custom progress indicator.
- 
- If this method is not implemented, the default indicatior is displayed.
-
- @param picker <#picker description#>
- @param active <#active description#>
- */
-- (void)gfycatMediaPicker:(GFYMediaPickerViewController *)picker setActivityIndicatorActive:(BOOL)active;
 
 /**
  Delegate method `gfycatMediaPicker:previewMedia:withSource:` is called by `GFYMediaPickerViewController` when user uses 3D Touch to preview a media item in the list.
@@ -306,13 +294,14 @@ NS_ASSUME_NONNULL_BEGIN
  <#Description#>
  */
 @property (nonatomic, strong) id<GFYArraySource> arraySource;
+@property (nonatomic, strong, nullable) id<GFYArrayProvider> currentProvider;
 
 @property (nonatomic, assign, readonly, getter=isLoadingContent) BOOL loadingContent;
 
 /**
  <#Description#>
  */
-- (void)refreshMediaArraySource;
+- (void)refreshMediaArraySource:(BOOL)forceReload;
 
 /**
  <#Description#>

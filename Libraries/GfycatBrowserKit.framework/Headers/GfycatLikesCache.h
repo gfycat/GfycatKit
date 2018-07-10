@@ -112,6 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GfycatLikesCache <NSObject>
 
+- (NSNumber *)likeStateForMediaId:(NSString *)mediaId;
 - (NSSet<NSString *> *)likedMediaIds;
 
 - (BOOL)serializeLikedMediaIds:(NSSet<NSString *> *)mediaIds;

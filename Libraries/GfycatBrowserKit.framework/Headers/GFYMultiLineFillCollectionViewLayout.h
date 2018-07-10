@@ -110,7 +110,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface GFYMultiLineFillCollectionViewLayout : UICollectionViewLayout
 
 @property (nonatomic, assign) IBInspectable UICollectionViewScrollDirection scrollDirection; // default is vertical

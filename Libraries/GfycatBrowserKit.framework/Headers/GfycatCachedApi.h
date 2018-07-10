@@ -108,14 +108,15 @@
 
 #import <GfycatApiKit/GfycatApiKit.h>
 #import "GfycatApiCache.h"
-#import "GfycatLikesCache.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol GfycatApiCache, GfycatInterfaceCache, GfycatBlackListCache, GfycatLikesCache;
+
 @interface GfycatCachedApi : NSObject <GfycatApi>
 
-+ (instancetype)apiWithCache:(id<GfycatApiCache>)cache;
-- (instancetype)initWithCache:(id<GfycatApiCache>)cache;
++ (instancetype)apiWithCache:(id<GfycatApiCache, GfycatInterfaceCache, GfycatBlackListCache, GfycatLikesCache>)cache;
+- (instancetype)initWithCache:(id<GfycatApiCache, GfycatInterfaceCache, GfycatBlackListCache, GfycatLikesCache>)cache;
 
 @end
 

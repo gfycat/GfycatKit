@@ -117,6 +117,14 @@ __typeof__(high) __high = (high);\
 __x > __high ? __high : (__x < __low ? __low : __x);\
 })
 
+#define GFYKIT_LERP(x0, x1, t) ({\
+__typeof__(x0) __x0 = (x0); \
+__typeof__(x1) __x1 = (x1); \
+__typeof__(t) __t = (t); \
+__typeof__(__t) __1 = (__typeof__(__t))1; \
+(__1 - __t) * __x0 + __t * __x1; \
+})
+
 __BEGIN_DECLS
 
 CGSize GFYKit_CGSizeStandardize(CGSize size);

@@ -108,6 +108,7 @@
 
 #import <UIKit/UIKit.h>
 #import <GfycatApiKit/GfycatApiKit.h>
+#import "GFYArraySource.h"
 #import "GFYCollectionViewSection.h"
 #import "GFYCategoryPickerSettings.h"
 
@@ -143,17 +144,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param model <#model description#>
  */
 - (void)gfycatCategoryPicker:(GFYCategoryPickerViewController *)picker didSelectItem:(id)model;
-
-/**
- Delegate method `gfycatCategoryPicker:setActivityIndicatorActive:` is called by `GFYCategoryPickerViewController` when
- network activity is happening to allow the host application to display a custom progress indicator.
- 
- If this method is not implemented, the default indicator is displayed.
-
- @param picker <#picker description#>
- @param active <#active description#>
- */
-- (void)gfycatCategoryPicker:(GFYCategoryPickerViewController *)picker setActivityIndicatorActive:(BOOL)active;
 
 /**
  The host application implements `gfycatCategoryPicker:customizeModel:` delegate method to modify category picker contents with custom items.
@@ -223,9 +213,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) UICollectionView *collectionView;
 
 /**
+ */
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+/**
  <#Description#>
  */
 - (void)refreshModelCustomization;
+
+/**
+ <#Description#>
+ */
+@property (nonatomic, strong) id<GFYArraySource> arraySource;
 
 /**
  <#Description#>

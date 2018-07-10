@@ -125,7 +125,7 @@ NS_SWIFT_NAME(GFYCollectionViewCellProtocol)
  @param model Model to be inspected.
  @return Size of a cell on screen.
  */
-+ (CGSize)sizeForModel:(id)model;
++ (CGSize)sizeForModel:(id)model in:(UICollectionView *)collectionView;
 
 /**
  Calculates size of the cell presenting a model.

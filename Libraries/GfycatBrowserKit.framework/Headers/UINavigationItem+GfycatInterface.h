@@ -110,7 +110,7 @@
 
 @class GFYNavigationViewTabModel;
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface UINavigationItem (GfycatInterface)
 
 @property (nonatomic, strong, nullable, setter=gfy_setLeftNavigationItem:) IBOutlet GFYNavigationViewTabModel *gfy_leftNavigationItem;

@@ -123,6 +123,9 @@ NS_ASSUME_NONNULL_BEGIN
              topLayoutGuide:(id<UILayoutSupport>)topLayoutGuide
           bottomLayoutGuide:(id<UILayoutSupport>)bottomLayoutGuide;
 
+    
+- (void)gfy_scrollToTopAnimated:(BOOL)animated;
+
 @end
 
 NS_ASSUME_NONNULL_END

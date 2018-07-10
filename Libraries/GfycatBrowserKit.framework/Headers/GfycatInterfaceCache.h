@@ -118,6 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (id<NSObject, NSCopying, NSSecureCoding> _Nullable)firstRecentMedia;
 - (BOOL)addRecentMedia:(id<NSObject, NSCopying, NSSecureCoding>)media;
 - (BOOL)removeRecentMedia:(id<NSObject, NSCopying, NSSecureCoding>)media;
+- (BOOL)removeRecentMediaId:(NSString *)mediaId;
 
 - (BOOL)serializeSearchHistory:(NSArray<NSString *> *)searchHistory;
 - (NSArray<NSString *> *)deserializeSearchHistory;
@@ -128,6 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<id<NSObject, NSCopying, NSSecureCoding>> *)deserializeCreatedMedias;
 - (BOOL)addCreatedMedia:(id<NSObject, NSCopying, NSSecureCoding>)media;
 - (BOOL)removeCreatedMedia:(id<NSObject, NSCopying, NSSecureCoding>)media;
+- (BOOL)removeCreatedMediaId:(NSString *)mediaId;
 
 @end
 

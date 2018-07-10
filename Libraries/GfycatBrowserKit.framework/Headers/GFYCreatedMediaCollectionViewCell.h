@@ -111,15 +111,30 @@
 #import "GFYMediaView.h"
 #import "GFYVideoPlayerView.h"
 #import "GFYCreatedMedia.h"
+#import "GFYAnimatedMediaCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class GFYCreatedMediaCollectionViewCell;
+
+@protocol GFYCreatedMediaCollectionViewCellDelegate <NSObject>
+
+- (void)gfycatCreatedMediaCell:(GFYCreatedMediaCollectionViewCell *)cell mediaPlaybackDidStart:(GFYCreatedMedia *)media;
+@optional
+- (void)gfycatCreatedMediaCell:(GFYCreatedMediaCollectionViewCell *)cell mediaPlaybackRestart:(GFYCreatedMedia *)media;
+
+@end
+
 @interface GFYCreatedMediaCollectionViewCell : GFYCollectionViewCell<GFYCreatedMedia *>
 
-@property (nonatomic, strong) IBOutlet GFYMediaView *mediaView;
-@property (nonatomic, strong) IBOutlet GFYVideoPlayerView *videoPlayerView;
+@property (nonatomic, weak, nullable) id<GFYCreatedMediaCollectionViewCellDelegate> delegate;
+
+@property (nonatomic, assign) GFYMediaViewFormat mediaFormat;
+@property (nonatomic, assign) BOOL enableSpatialContent;
 
 @property (nonatomic, copy, nullable) void (^deleteHandler)(GFYCreatedMedia *);
+
+@property (nonatomic, strong) IBOutlet GFYMediaView *mediaView;
 
 @end
 

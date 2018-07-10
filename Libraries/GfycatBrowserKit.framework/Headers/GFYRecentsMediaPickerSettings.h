@@ -126,6 +126,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL enableFavoriteItems;
 
+/**
+ Toggles automatic spatial content playback
+ Default: NO
+ */
+@property (nonatomic, assign) BOOL enableSpatialContent;
+
 @end
 
 NS_ASSUME_NONNULL_END

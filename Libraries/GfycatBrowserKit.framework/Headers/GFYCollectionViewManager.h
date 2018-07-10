@@ -132,7 +132,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface GFYCollectionViewManager : NSObject <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, assign) IBInspectable NSInteger gridSize;

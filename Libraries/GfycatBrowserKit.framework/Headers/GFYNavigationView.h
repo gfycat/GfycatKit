@@ -151,6 +151,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) UIView *shadowHolder;
 - (void)showShadowWithOpacity:(CGFloat)opacity;
 - (void)hideShadow;
+
+@property (nonatomic, copy, nullable) NSString *searchPlaceholder;
     
 @end
 

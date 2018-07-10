@@ -127,10 +127,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSArray *array;
 @property (nonatomic, readonly) BOOL hasMoreData;
 
+- (instancetype)copyWithConsumer:(id<GFYArrayConsumer>)consumer;
+
 - (void)loadMoreData;
 - (BOOL)isLoadingMoreData;
 
 - (void)refreshBlackList;
+
+- (void)reload;
 
 @end
 
