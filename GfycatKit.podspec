@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     sp.dependency 'GfycatApiKit', '~> 0.0.16'
     sp.resources = 'Libraries/GfycatBrowserKitResources.bundle'
     sp.vendored_frameworks = 'Libraries/GfycatBrowserKit.framework'
-    sp.frameworks = 'UIKit', 'AVFoundation', 'CoreMedia', 'Photos', 'SceneKit', 'GLKit', 'CoreMotion'
+    sp.frameworks = 'UIKit', 'AVFoundation', 'CoreMedia', 'Photos', 'SceneKit', 'GLKit', 'CoreMotion', 'ModelIO'
   end
 
   s.subspec 'PhotoMoments' do |sp|
