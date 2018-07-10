@@ -33,3 +33,7 @@ Once you get those, update your `Info.plist` file accordingly.
 <key>GfycatApiClientSecret</key>
 <string>Your API Client Secret goes here</string>
 ```
+
+## Contact Us
+
+Any questions or comments please send them to api@gfycat.com
