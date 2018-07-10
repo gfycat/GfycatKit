@@ -1,12 +1,14 @@
 source 'https://github.com/CocoaPods/Specs'
 workspace 'GfycatBrowser.xcworkspace'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 inhibit_all_warnings!
 use_frameworks!
 
 target 'GfycatBrowser' do
     project 'GfycatBrowser.xcodeproj'
     pod 'GfycatKit'
+# uncomment to enable photo moments
+#    pod 'GfycatKit/PhotoMoments'
 end
 

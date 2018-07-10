@@ -18,14 +18,18 @@ class FirstViewController: GFYSimpleContainerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mediaPreview.mediaFormat = .GIF_5MB
+        mediaPreview.mediaFormat = .gif5mb
         
         let gfycatBrowserSettings = GFYBrowserSettings()
         gfycatBrowserSettings.enableSearchHistory = true
-        gfycatBrowserSettings.scrollDirection = .horizontal
-        gfycatBrowserSettings.enableRecentItems = true
-        gfycatBrowserSettings.categoryMediaFormat = .GIF_2MB
-        gfycatBrowserSettings.videoMediaFormat = .GIF_2MB
+        // categories browsing settings
+        gfycatBrowserSettings.categoryPickerSettings.scrollDirection = .horizontal
+        gfycatBrowserSettings.categoryPickerSettings.enableRecentItems = true
+        gfycatBrowserSettings.categoryPickerSettings.categoryMediaFormat = .gif2mb
+        // media list browsing settings
+        gfycatBrowserSettings.mediaPickerSettings.scrollDirection = .horizontal
+        gfycatBrowserSettings.mediaPickerSettings.videoMediaFormat = .gif2mb
+        
         let browser = GFYBrowserViewController(settings: gfycatBrowserSettings)
         browser.delegate = self
         activeViewController = browser
@@ -42,8 +46,9 @@ extension FirstViewController: GFYBrowserDelegate {
 }
 
 extension FirstViewController: GFYMediaViewDelegate {
-    func gfyMediaView(_ mediaView: GFYMediaView, didStartPlayback media: GfycatMedia) {
-        NSLog("Playback started: %@", media.gfyName)
+    
+    func gfyMediaView(_ mediaView: GFYMediaView, didStartPlayback media: GfycatReferencedMedia) {
+        print("Playback started: \(media.gfyName)")
         GFYAnalyticsHub.shared.trackVideoPlayed(withGfyId: media.gfyId, context: .none, keyword: "preview", flow: .half)
         gradientBar.active = false
     }

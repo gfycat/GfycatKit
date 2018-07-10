@@ -38,7 +38,7 @@ class ColorCollectionViewCell: GFYCollectionViewCell<ColorModel> {
     override func present(_ model: ColorModel, animated: Bool) {
         backgroundColor = model.color
     }
-    
+
     override static func height(forModel model: Any, width itemWidth: CGFloat) -> CGFloat {
         guard (model as? ColorModel) != nil else {
             return super.height(forModel: model, width: itemWidth)
@@ -54,21 +54,37 @@ class SecondViewController: GFYSimpleContainerViewController {
 
         let gfycatBrowserSettings = GFYBrowserSettings()
         gfycatBrowserSettings.enableSearchHistory = true
-        gfycatBrowserSettings.enableRecentItems = true
-        gfycatBrowserSettings.enablePhotoMoments = true
-        
-        gfycatBrowserSettings.scrollDirection = .vertical
-        gfycatBrowserSettings.cornerRadius = 0
-        gfycatBrowserSettings.itemSpacing = 2
-        gfycatBrowserSettings.contentInset = UIEdgeInsetsMake(4, 8, 16, 8)
-        gfycatBrowserSettings.categoryGridSize = 4
-        gfycatBrowserSettings.categoryAspectRatio = CGSize(width: 1, height: 1)
-        gfycatBrowserSettings.categoryMediaFormat = .webP
-        gfycatBrowserSettings.videoMediaFormat = .webP
+        // categories browsing settings
+        gfycatBrowserSettings.categoryPickerSettings.scrollDirection = .vertical
+        gfycatBrowserSettings.categoryPickerSettings.cornerRadius = 0
+        gfycatBrowserSettings.categoryPickerSettings.itemSpacing = 2
+        gfycatBrowserSettings.categoryPickerSettings.contentInset = UIEdgeInsetsMake(4, 8, 16, 8)
+        gfycatBrowserSettings.categoryPickerSettings.categoryGridSize = 4
+        gfycatBrowserSettings.categoryPickerSettings.categoryAspectRatio = CGSize(width: 1, height: 1)
+        gfycatBrowserSettings.categoryPickerSettings.categoryMediaFormat = .webp
+        gfycatBrowserSettings.categoryPickerSettings.enableRecentItems = true
+        gfycatBrowserSettings.categoryPickerSettings.enablePhotoMoments = true
+        // --register cells for custom models
+        gfycatBrowserSettings.categoryPickerSettings.registerCellView(ColorCollectionViewCell.self, forCategoryModel: ColorModel.self)
+        // media list browsing settings
+        gfycatBrowserSettings.mediaPickerSettings.scrollDirection = .vertical
+        gfycatBrowserSettings.mediaPickerSettings.videoMediaFormat = .largeWebp
+        gfycatBrowserSettings.mediaPickerSettings.cornerRadius = 0
+        gfycatBrowserSettings.mediaPickerSettings.itemSpacing = 2
+        gfycatBrowserSettings.mediaPickerSettings.contentInset = UIEdgeInsetsMake(4, 8, 16, 8)
+        // recents list browsing settings
+        gfycatBrowserSettings.recentsMediaPickerSettings.scrollDirection = .vertical
+        gfycatBrowserSettings.recentsMediaPickerSettings.videoMediaFormat = .webp
+        gfycatBrowserSettings.recentsMediaPickerSettings.cornerRadius = 40
+        gfycatBrowserSettings.recentsMediaPickerSettings.itemSpacing = 2
+        gfycatBrowserSettings.recentsMediaPickerSettings.videoGridSize = 3
+        gfycatBrowserSettings.recentsMediaPickerSettings.contentInset = UIEdgeInsetsMake(4, 8, 16, 8)
+        // grouping of recent items
+        gfycatBrowserSettings.recentsMediaPickerSettings.enableRecentsGrouping = true
+        // uncomment to enable photo moments
+//        gfycatBrowserSettings.recentsMediaPickerSettings.enableSharedGrouping = true
+        gfycatBrowserSettings.recentsMediaPickerSettings.enableFavoriteItems = true
 
-        // register cells for custom models
-        gfycatBrowserSettings.registerCellView(ColorCollectionViewCell.self, forCategoryModel: ColorModel.self)
-        
         let browser = GFYBrowserViewController(settings: gfycatBrowserSettings)
         browser.delegate = self
         activeViewController = browser
@@ -76,26 +92,42 @@ class SecondViewController: GFYSimpleContainerViewController {
 }
 
 extension SecondViewController: GFYBrowserDelegate {
-    
-    func gfycatCategoryPicker(_ picker: GFYCategoryPickerViewController, customizeModel model: [[Any]]) -> [[Any]] {
-        let greenSectionModels: [Any] = [ColorModel(withColor: .green), ColorModel(withColor: .green)]
-        let redSectionModel: [Any] = [ColorModel(withColor: .red), ColorModel(withColor: .red), ColorModel(withColor: .red)]
-        let addedSections = [greenSectionModels] + [redSectionModel]
-        
-        if model.count > 0, model[0].count > 0 {
-            let specialModels: [Any] = [ColorModel(withColor: .yellow)]
-            return addedSections + [specialModels + model[0]]
+    // MARK: - GFYCategoryPickerDelegate
+    func gfycatCategoryPicker(_ picker: GFYCategoryPickerViewController, customizeModel model: [GFYCollectionViewSection]) -> [GFYCollectionViewSection] {
+        // add model to the .content section
+        let specialContentCellModels: [GFYArrangable] = [ColorModel(withColor: .yellow)]
+        var model = model
+        if let sectionIndex = model.index(where: { $0.identifier == .content }) {
+            model[sectionIndex] = GFYCollectionViewSectionArray(identifier: .content,
+                                                                items: specialContentCellModels.compactMap({ $0 }) + model[sectionIndex].items)
         } else {
-            return addedSections
+            model.append(GFYCollectionViewSectionArray(identifier: .content,
+                                                       items: specialContentCellModels.compactMap({ $0 })))
         }
+
+        // add more sections before .content section
+        guard let contentSectionIndex = model.index(where: { $0.identifier == .content }) else {
+            return model
+        }
+        
+        let greenSectionIdentifier = GFYCollectionViewSectionIdentifier(rawValue: "greenContent")
+        let greenSectionModels: [GFYArrangable] = [ColorModel(withColor: .green), ColorModel(withColor: .green)]
+        model.insert(GFYCollectionViewSectionArray.init(identifier: greenSectionIdentifier, items: greenSectionModels), at: contentSectionIndex)
+        
+        let redSectionIdentifier = GFYCollectionViewSectionIdentifier(rawValue: "redContent")
+        let redSectionModels: [GFYArrangable] = [ColorModel(withColor: .red), ColorModel(withColor: .red), ColorModel(withColor: .red)]
+        model.insert(GFYCollectionViewSectionArray.init(identifier: redSectionIdentifier, items: redSectionModels), at: contentSectionIndex)
+        
+        return model
     }
     
     func gfycatCategoryPicker(_ picker: GFYCategoryPickerViewController, didSelectItem model: Any) {
-        NSLog("Did Select custom cell: %@", (model as? NSObject) ?? "NULL")
+        print("Did Select custom cell \(model)")
     }
-    
+
+    // MARK: - GFYMediaPickerViewController
     func gfycatMediaPicker(_ picker: GFYMediaPickerViewController, didSelect media: GfycatMedia, with source: GFYArraySource) {
-        NSLog("Did Select media: %@", media)
+        print("Did Select media: \(media)")
     }
 }
 
